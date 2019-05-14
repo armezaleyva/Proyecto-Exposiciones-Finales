@@ -241,7 +241,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0aff299b46bef419baa2d1c03a74f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tiempoDeEspera: 8
   panel: {fileID: 1657807922}
+  textoEvento: {fileID: 309502308}
 --- !u!1 &309502306
 GameObject:
   m_ObjectHideFlags: 0
