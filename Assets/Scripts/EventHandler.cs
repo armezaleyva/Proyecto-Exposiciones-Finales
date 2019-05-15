@@ -10,13 +10,31 @@ public class EventHandler : MonoBehaviour
     [SerializeField]
     GameObject panel;
     [SerializeField]
+    Text tituloEvento;
+    [SerializeField]
     Text textoEvento;
-    List<Evento> listaEventos;
+    [SerializeField]
+    Button botonDecision1;
+    [SerializeField]
+    Button botonDecision2;
+
+    private Text txtBotonDecision1;
+    private Text txtBotonDecision2;
+
+    private List<Evento> listaEventos;
+    private Evento eventoActual;
+
+    private int numeroAleatorio;
 
     // Start is called before the first frame update
     void Start()
     {
-        panel.SetActive(true);
+        txtBotonDecision1 = botonDecision1.GetComponentInChildren<Text>();
+        txtBotonDecision2 = botonDecision2.GetComponentInChildren<Text>();
+
+        botonDecision1.onClick.AddListener(Decision1);
+        botonDecision2.onClick.AddListener(Decision2);
+
         Evento evento0 = new Evento(
             0,
             "ola",
@@ -34,14 +52,16 @@ public class EventHandler : MonoBehaviour
 
         listaEventos = new List<Evento>();
         listaEventos.Add(evento0);
+        listaEventos.Add(evento1);
 
-        StartCoroutine(TimerEvento());
+        CerrarEvento();
+        textoEvento.text = "Wereja";
     }
 
     // Update is called once per frame
     void Update()
     {
-        textoEvento.text = "Wereja";
+        
     }
 
     IEnumerator TimerEvento()
@@ -52,7 +72,41 @@ public class EventHandler : MonoBehaviour
 
     void GenerarEvento() 
     {
-        print("xd");
+        if (eventoActual != null) 
+        {
+            listaEventos.RemoveAt(numeroAleatorio);
+        }
 
+        if (listaEventos.Count > 0) 
+        {
+            print("xd");
+            numeroAleatorio = Stats.rng.Next(listaEventos.Count);
+            eventoActual = listaEventos[numeroAleatorio]; 
+
+            tituloEvento.text = eventoActual.nombreEvento;
+            textoEvento.text = eventoActual.descripcionEvento;
+            txtBotonDecision1.text = eventoActual.decision1;
+            txtBotonDecision2.text = eventoActual.decision2;
+
+            panel.SetActive(true);
+        }
+    }
+
+    void Decision1()
+    {
+        print("decision izq");
+        CerrarEvento();
+    }
+
+    void Decision2()
+    {
+        print("decision der");
+        CerrarEvento();
+    }
+
+    void CerrarEvento() 
+    {
+        panel.SetActive(false);
+        StartCoroutine(TimerEvento());
     }
 }
