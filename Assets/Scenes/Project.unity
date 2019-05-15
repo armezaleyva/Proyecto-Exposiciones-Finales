@@ -1056,7 +1056,7 @@ PrefabInstance:
     - target: {fileID: 8926913880536515555, guid: 0fd918f065810194e8c0bd5ac301f60c,
         type: 3}
       propertyPath: m_Name
-      value: Particle System
+      value: Fuego
       objectReference: {fileID: 0}
     - target: {fileID: 8926913880536515558, guid: 0fd918f065810194e8c0bd5ac301f60c,
         type: 3}
