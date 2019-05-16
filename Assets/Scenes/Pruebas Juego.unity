@@ -5296,6 +5296,7 @@ MonoBehaviour:
   particulasDoctores: {fileID: 15290148}
   particulasCalaveras: {fileID: 177912462}
   particulasReyBebe: {fileID: 1261729437}
+  particulasReyPerro: {fileID: 0}
   particulasLluviaSangrienta: {fileID: 791196824}
 --- !u!1 &204143610
 GameObject:
@@ -11001,7 +11002,7 @@ PrefabInstance:
     - target: {fileID: 6104151023395575659, guid: ad22472662b75e24da2636eca1ff58e4,
         type: 3}
       propertyPath: playOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6104151023395575659, guid: ad22472662b75e24da2636eca1ff58e4,
         type: 3}
