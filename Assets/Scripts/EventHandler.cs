@@ -24,6 +24,9 @@ public class EventHandler : MonoBehaviour
     [SerializeField]
     Button botonDecision2;
 
+    [SerializeField]
+    ParticleSystem particulasDinero;
+
     private Text txtBotonDecision1;
     private Text txtBotonDecision2;
 
@@ -121,7 +124,7 @@ public class EventHandler : MonoBehaviour
             "Producción de alimento y comercio",
             "Producción de objetos y comercio",
             "Placeholder",
-            "Placeholder"
+            "ParticulasDinero"
         );
         Evento evento3 = new Evento(
             "¡Hechizo Protector!",
@@ -233,6 +236,11 @@ public class EventHandler : MonoBehaviour
         listaEventos.Add(evento7);
 
         RimRojo();
+    }
+
+    public void ParticulasDinero()
+    {
+        particulasDinero.Play();
     }
 
     public void RimAzul()
