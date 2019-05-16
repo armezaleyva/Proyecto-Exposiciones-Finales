@@ -169,13 +169,58 @@ public class EventHandler : MonoBehaviour
     {
         Evento evento2 = new Evento(
             "Maldición Eterna",
-            "Has elegido ser una ciudad de bien, ¡ahora debes encaminar a tu ciudad a la prosperidad! ¡Debes decidir a que se dedicara tu ciudad!",
-            "Producción de alimento y comercio",
-            "Producción de objetos y comercio",
+            "¡Has decidido traerle mal a la ciudad. Hora de causar sufrimiento! ¡Comenzemos con una maldición!",
+            "Maldición de Vergüenza",
+            "Maldición de Sufrimiento",
+            "Placeholder",
+            "Placeholder"
+        );
+        Evento evento3 = new Evento(
+            "Contrato",
+            "Has contratado a un grupo de bandidos para atacar a la ciudad, ¿que es lo que harán?",
+            "Robar pertenencias",
+            "Diezmar su fuente de alimento",
+            "Placeholder",
+            "Placeholder"
+        );
+        Evento evento4 = new Evento(
+            "Esclavistas",
+            "Has traído a un grupo de ricos en busca de esclavos para que compren a los que habitan en la ciudad.",
+            "Vender a los niños",
+            "Vender a las niñas",
+            "Placeholder",
+            "Placeholder"
+        );
+        Evento evento5 = new Evento(
+            "Enfermedad",
+            "¿Todavía no se largan? Bueno, ¡Llenemos la ciudad de enfermedad!",
+            "¡Todos sufrirán de lepra!",
+            "¡El cólera acabará con ellos!",
+            "Placeholder",
+            "Placeholder"
+        );
+        Evento evento6 = new Evento(
+            "Falsas Esperanzas",
+            "Tu plan final requiere de que haya personas viviendo en tu ciudad, así que decides curar los males que afectan a tu ciudad.",
+            "Revertir todos los males...por ahora...",
+            "Revertir todos los males...por ahora...",
+            "Placeholder",
+            "Placeholder"
+        );
+        Evento evento7= new Evento(
+            "El mal de los males",
+            "Tu plan ha funcionado. ¡Ahora destruye tu ciudad y termina con la vida de aquellos que la habitan!",
+            "¡Lluvia de Sangre!",
+            "¡Quemar la ciudad!",
             "Placeholder",
             "Placeholder"
         );
         listaEventos.Add(evento2);
+        listaEventos.Add(evento3);
+        listaEventos.Add(evento4);
+        listaEventos.Add(evento5);
+        listaEventos.Add(evento6);
+        listaEventos.Add(evento7);
     }
 
     public void Placeholder()
