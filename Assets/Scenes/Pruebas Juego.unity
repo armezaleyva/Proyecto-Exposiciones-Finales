@@ -5296,7 +5296,7 @@ MonoBehaviour:
   particulasDoctores: {fileID: 15290148}
   particulasCalaveras: {fileID: 177912462}
   particulasReyBebe: {fileID: 1261729437}
-  particulasReyPerro: {fileID: 0}
+  particulasReyPerro: {fileID: 1258487136}
   particulasLluviaSangrienta: {fileID: 791196824}
 --- !u!1 &204143610
 GameObject:
@@ -25778,6 +25778,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!198 &1258487136 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6104151023395575659, guid: ad22472662b75e24da2636eca1ff58e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 672809511}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1261729436
 PrefabInstance:
   m_ObjectHideFlags: 0
