@@ -98,7 +98,7 @@ public class EventHandler : MonoBehaviour
     void CerrarEvento() 
     {
         panel.SetActive(false);
-        if (listaEventos[indexEvento + 1] != null) 
+        if (indexEvento + 1 < listaEventos.Count) 
         {
             indexEvento++;
             StartCoroutine(TimerEvento());
