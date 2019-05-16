@@ -10,6 +10,12 @@ public class EventHandler : MonoBehaviour
     [SerializeField]
     float tiempoDeEspera = 8;
     [SerializeField]
+    Slider sliderRimPower;
+    [SerializeField]
+    float rimPower = 4;
+    [SerializeField]
+    GameObject ciudad;
+    [SerializeField]
     GameObject panel;
     [SerializeField]
     Text tituloEvento;
@@ -20,6 +26,26 @@ public class EventHandler : MonoBehaviour
     [SerializeField]
     Button botonDecision2;
 
+    [SerializeField]
+    ParticleSystem particulasDinero;
+    [SerializeField]
+    ParticleSystem particulasFuego;
+    [SerializeField]
+    ParticleSystem particulasArcoIris;
+    [SerializeField]
+    ParticleSystem particulasComida;
+    [SerializeField]
+    ParticleSystem particulasBasura1;
+    [SerializeField]
+    ParticleSystem particulasBasura2;
+    [SerializeField]
+    ParticleSystem particulasNiño;
+    [SerializeField]
+    ParticleSystem particulasNiña;
+    [SerializeField]
+    ParticleSystem particulasBilletes;
+    
+
     private Text txtBotonDecision1;
     private Text txtBotonDecision2;
 
@@ -27,7 +53,8 @@ public class EventHandler : MonoBehaviour
     private Evento eventoActual;
     private int indexEvento;
 
-    private int numeroAleatorio;
+    private Renderer rendererCiudad;
+    private Material materialCiudad;
 
     Type t;
 
@@ -39,6 +66,12 @@ public class EventHandler : MonoBehaviour
 
         botonDecision1.onClick.AddListener(Decision1);
         botonDecision2.onClick.AddListener(Decision2);
+
+        sliderRimPower.value = rimPower;
+        sliderRimPower.onValueChanged.AddListener(ActualizarRimPower);
+
+        rendererCiudad = ciudad.GetComponent<Renderer>();
+        materialCiudad = rendererCiudad.material;
 
         Evento evento1 = new Evento(
             "Fé de la Ciudad",
@@ -98,7 +131,7 @@ public class EventHandler : MonoBehaviour
     void CerrarEvento() 
     {
         panel.SetActive(false);
-        if (listaEventos[indexEvento + 1] != null) 
+        if (indexEvento + 1 < listaEventos.Count) 
         {
             indexEvento++;
             StartCoroutine(TimerEvento());
@@ -112,16 +145,16 @@ public class EventHandler : MonoBehaviour
             "Has elegido ser una ciudad de bien, ¡ahora debes encaminar a tu ciudad a la prosperidad! ¡Debes decidir a que se dedicara tu ciudad!",
             "Producción de alimento y comercio",
             "Producción de objetos y comercio",
-            "Placeholder",
-            "Placeholder"
+            "ParticulasComida",
+            "ParticulasDinero"
         );
         Evento evento3 = new Evento(
             "¡Hechizo Protector!",
             "Te diste cuenta que tu ciudad necesita ayuda para prosperar, ¡así que buscaste a un mago que hiciera un hechizo para apoyar a tu pueblo!",
             "Hechizo de Estabilidad",
             "Hechizo de Buena Fortuna",
-            "Placeholder",
-            "Placeholder"
+            "RimAmarillo",
+            "RimVerde"
         );
         Evento evento4 = new Evento(
             "Los Viajeros",
@@ -129,14 +162,14 @@ public class EventHandler : MonoBehaviour
             "Ofrecerles trabajo para que se queden",
             "Ofrecerles comida y estancia temporal",
             "Placeholder",
-            "Placeholder"
+            "ParticulasComida"
         );
         Evento evento5 = new Evento(
             "La Enfermedad",
             "¡Una enfermedad se está esparciendo por la ciudad, hay que hacer algo!",
             "Buscar una cura",
             "Traer médicos a que los curen",
-            "Placeholder",
+            "RimAzulOscuro",
             "Placeholder"
         );
         Evento evento6 = new Evento(
@@ -144,8 +177,8 @@ public class EventHandler : MonoBehaviour
             "Un grupo de bandidos fue detenido en tu ciudad, es hora de la justicia.",
             "Servicio comunitario",
             "Exiliarlos de la ciudad",
-            "Placeholder",
-            "Placeholder"
+            "ParticulasBasura",
+            "ParticulasArcoIris"
         );
         Evento evento7 = new Evento(
             "El Legado",
@@ -163,19 +196,191 @@ public class EventHandler : MonoBehaviour
         listaEventos.Add(evento5);
         listaEventos.Add(evento6);
         listaEventos.Add(evento7);
+
+        RimAzul();
     }
 
     public void EventosMal() 
     {
         Evento evento2 = new Evento(
             "Maldición Eterna",
-            "Has elegido ser una ciudad de bien, ¡ahora debes encaminar a tu ciudad a la prosperidad! ¡Debes decidir a que se dedicara tu ciudad!",
-            "Producción de alimento y comercio",
-            "Producción de objetos y comercio",
+            "¡Has decidido traerle mal a la ciudad. Hora de causar sufrimiento! ¡Comenzemos con una maldición!",
+            "Maldición de Vergüenza",
+            "Maldición de Sufrimiento",
+            "RimVerdeClaro",
+            "RimMorado"
+        );
+        Evento evento3 = new Evento(
+            "Contrato",
+            "Has contratado a un grupo de bandidos para atacar a la ciudad, ¿que es lo que harán?",
+            "Robar pertenencias",
+            "Diezmar su fuente de alimento",
+            "ParticulasMuchoDinero",
+            "ParticulasComida"
+        );
+        Evento evento4 = new Evento(
+            "Esclavistas",
+            "Has traído a un grupo de ricos en busca de esclavos para que compren a los que habitan en la ciudad.",
+            "Vender a los niños",
+            "Vender a las niñas",
+            "ParticulasNiño",
+            "ParticulasNiña"
+        );
+        Evento evento5 = new Evento(
+            "Enfermedad",
+            "¿Todavía no se largan? Bueno, ¡Llenemos la ciudad de enfermedad!",
+            "¡Todos sufrirán de lepra!",
+            "¡El cólera acabará con ellos!",
+            "RimAmarillo",
+            "RimNaranja"
+        );
+        Evento evento6 = new Evento(
+            "Falsas Esperanzas",
+            "Tu plan final requiere de que haya personas viviendo en tu ciudad, así que decides curar los males que afectan a tu ciudad.",
+            "Revertir todos los males...por ahora...",
+            "Revertir todos los males...por ahora...",
+            "RimAzul",
+            "RimAzul"
+        );
+        Evento evento7= new Evento(
+            "El mal de los males",
+            "Tu plan ha funcionado. ¡Ahora destruye tu ciudad y termina con la vida de aquellos que la habitan!",
+            "¡Lluvia de Sangre!",
+            "¡Quemar la ciudad!",
             "Placeholder",
-            "Placeholder"
+            "ParticulasFuego"
         );
         listaEventos.Add(evento2);
+        listaEventos.Add(evento3);
+        listaEventos.Add(evento4);
+        listaEventos.Add(evento5);
+        listaEventos.Add(evento6);
+        listaEventos.Add(evento7);
+
+        RimRojo();
+    }
+
+    public void ParticulasDinero()
+    {
+        particulasDinero.Play();
+    }
+
+    public void ParticulasMuchoDinero()
+    {
+        particulasBilletes.Play();
+    }
+
+    public void ParticulasComida()
+    {
+        particulasComida.Play();
+    }
+
+    public void ParticulasArcoIris()
+    {
+        particulasArcoIris.Play();
+    }
+
+    public void ParticulasBasura()
+    {
+        particulasBasura1.Play();
+        particulasBasura2.Play();
+    }
+    
+    public void ParticulasFuego()
+    {
+        particulasFuego.Play();
+    }
+
+    public void ParticulasNiño()
+    {
+        particulasNiño.Play();
+    }
+
+    public void ParticulasNiña()
+    {
+        particulasNiña.Play();
+    }
+
+    public void RimAzul()
+    {
+        materialCiudad.SetFloat("_Rim", rimPower);
+        materialCiudad.SetColor("_RimColor", Color.blue);
+    }
+
+    public void RimRojo()
+    {
+        materialCiudad.SetFloat("_Rim", rimPower);
+        materialCiudad.SetColor("_RimColor", Color.red);
+    }
+    
+    public void RimAmarillo()
+    {
+        materialCiudad.SetFloat("_Rim", rimPower);
+        materialCiudad.SetColor("_RimColor", Color.yellow);
+    }
+
+    public void RimVerde()
+    {
+        materialCiudad.SetFloat("_Rim", rimPower);
+        materialCiudad.SetColor("_RimColor", Color.green);
+    }
+
+    public void RimAzulOscuro()
+    {
+        Color azulOscuro;
+        if (ColorUtility.TryParseHtmlString("#003366", out azulOscuro))
+        {
+            materialCiudad.SetFloat("_Rim", rimPower / 3);
+            materialCiudad.SetColor("_RimColor", azulOscuro);
+        }
+    }
+
+    public void RimMorado()
+    {
+        materialCiudad.SetFloat("_Rim", rimPower);
+        materialCiudad.SetColor("_RimColor", Color.magenta);
+    }
+
+    public void RimVerdeOscuro()
+    {
+        Color verdeOscuro;
+        if (ColorUtility.TryParseHtmlString("#006400", out verdeOscuro))
+        {
+            materialCiudad.SetFloat("_Rim", rimPower);
+            materialCiudad.SetColor("_RimColor", verdeOscuro);
+        }
+    }
+
+    public void RimVerdeClaro()
+    {
+        Color verdeClaro;
+        if (ColorUtility.TryParseHtmlString("#00FF00", out verdeClaro))
+        {
+            materialCiudad.SetFloat("_Rim", rimPower);
+            materialCiudad.SetColor("_RimColor", verdeClaro);
+        }
+    }
+
+    public void RimNaranja()
+    {
+        Color naranja;
+        if (ColorUtility.TryParseHtmlString("#ffa500", out naranja))
+        {
+            materialCiudad.SetFloat("_Rim", rimPower);
+            materialCiudad.SetColor("_RimColor", naranja);
+        }
+    }
+
+    void ActualizarRimPower(float value)
+    {
+        rimPower = value;
+        materialCiudad.SetFloat("_Rim", rimPower);
+    }
+
+    public void ResetRim()
+    {
+        materialCiudad.SetFloat("_Rim", 10);
+        materialCiudad.SetColor("_RimColor", Color.black);
     }
 
     public void Placeholder()
