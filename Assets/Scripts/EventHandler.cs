@@ -48,6 +48,8 @@ public class EventHandler : MonoBehaviour
     ParticleSystem particulasBilletes;
     [SerializeField]
     ParticleSystem particulasMaletines;
+    [SerializeField]
+    ParticleSystem particulasLluvia;
     
 
     private Text txtBotonDecision1;
@@ -251,7 +253,7 @@ public class EventHandler : MonoBehaviour
             "Tu plan ha funcionado. ¡Ahora destruye tu ciudad y termina con la vida de aquellos que la habitan!",
             "¡Lluvia de Sangre!",
             "¡Quemar la ciudad!",
-            "Placeholder",
+            "ParticulasLluvia",
             "ParticulasFuego"
         );
         listaEventos.Add(evento2);
@@ -314,6 +316,11 @@ public class EventHandler : MonoBehaviour
     public void ParticulasMaletines()
     {
         particulasMaletines.Play();
+    }
+
+    public void ParticulasLluvia()
+    {
+        particulasLluvia.Play();
     }
 
     public void RimAzul()
