@@ -38,6 +38,11 @@ public class EventHandler : MonoBehaviour
     ParticleSystem particulasBasura1;
     [SerializeField]
     ParticleSystem particulasBasura2;
+    [SerializeField]
+    ParticleSystem particulasNiño;
+    [SerializeField]
+    ParticleSystem particulasNiña;
+    
 
     private Text txtBotonDecision1;
     private Text txtBotonDecision2;
@@ -216,8 +221,8 @@ public class EventHandler : MonoBehaviour
             "Has traído a un grupo de ricos en busca de esclavos para que compren a los que habitan en la ciudad.",
             "Vender a los niños",
             "Vender a las niñas",
-            "Placeholder",
-            "Placeholder"
+            "ParticulasNiño",
+            "ParticulasNiña"
         );
         Evento evento5 = new Evento(
             "Enfermedad",
@@ -277,6 +282,16 @@ public class EventHandler : MonoBehaviour
     public void ParticulasFuego()
     {
         particulasFuego.Play();
+    }
+
+    public void ParticulasNiño()
+    {
+        particulasNiño.Play();
+    }
+
+    public void ParticulasNiña()
+    {
+        particulasNiña.Play();
     }
 
     public void RimAzul()
