@@ -46,6 +46,8 @@ public class EventHandler : MonoBehaviour
     ParticleSystem particulasNiña;
     [SerializeField]
     ParticleSystem particulasBilletes;
+    [SerializeField]
+    ParticleSystem particulasMaletines;
     
 
     private Text txtBotonDecision1;
@@ -163,7 +165,7 @@ public class EventHandler : MonoBehaviour
             "Tu ciudad está prosperando, por lo que muchos viajeros están llegado a la ciudad…",
             "Ofrecerles trabajo para que se queden",
             "Ofrecerles comida y estancia temporal",
-            "Placeholder",
+            "ParticulasMaletines",
             "ParticulasComida"
         );
         Evento evento5 = new Evento(
@@ -307,6 +309,11 @@ public class EventHandler : MonoBehaviour
     public void ParticulasNiña()
     {
         particulasNiña.Play();
+    }
+
+    public void ParticulasMaletines()
+    {
+        particulasMaletines.Play();
     }
 
     public void RimAzul()
