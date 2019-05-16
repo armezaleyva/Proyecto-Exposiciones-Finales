@@ -239,6 +239,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4e6bbf64b89e1ee4bb64dc60c92bb42a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 381c3f82aa667f64388c4a6fcb9f0f37, type: 3}
+--- !u!198 &15290148 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1192685157346445070, guid: 381c3f82aa667f64388c4a6fcb9f0f37,
+    type: 3}
+  m_PrefabInstance: {fileID: 15290147}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &52843121
 GameObject:
   m_ObjectHideFlags: 0
@@ -5123,6 +5129,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: cf6dcf0da10ca6a448b02a43f9a7adf4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad22472662b75e24da2636eca1ff58e4, type: 3}
+--- !u!198 &177912462 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6104151023395575659, guid: ad22472662b75e24da2636eca1ff58e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 177912461}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &196336219
 GameObject:
   m_ObjectHideFlags: 0
@@ -5281,9 +5293,10 @@ MonoBehaviour:
   "particulasNi\xF1a": {fileID: 1080311692}
   particulasBilletes: {fileID: 52843123}
   particulasMaletines: {fileID: 1811855220}
-  particulasDoctores: {fileID: 0}
-  particulasCalaveras: {fileID: 0}
-  particulasReyBebe: {fileID: 0}
+  particulasDoctores: {fileID: 15290148}
+  particulasCalaveras: {fileID: 177912462}
+  particulasReyBebe: {fileID: 1261729437}
+  particulasLluviaSangrienta: {fileID: 791196824}
 --- !u!1 &204143610
 GameObject:
   m_ObjectHideFlags: 0
@@ -25794,6 +25807,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 83e766b02c35a064fb558598a99a9b9c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 381c3f82aa667f64388c4a6fcb9f0f37, type: 3}
+--- !u!198 &1261729437 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1192685157346445070, guid: 381c3f82aa667f64388c4a6fcb9f0f37,
+    type: 3}
+  m_PrefabInstance: {fileID: 1261729436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1317021221
 GameObject:
   m_ObjectHideFlags: 0
