@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5051,6 +5051,7 @@ MonoBehaviour:
   particulasFuego: {fileID: 971184341}
   particulasArcoIris: {fileID: 543633987}
   particulasComida: {fileID: 1733244756}
+  particulasComida2: {fileID: 631316121}
   particulasBasura1: {fileID: 958225258}
   particulasBasura2: {fileID: 1884030249}
   "particulasNi\xF1o": {fileID: 204143612}
@@ -10684,6 +10685,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611035379}
   m_CullTransparentMesh: 0
+--- !u!198 &631316121 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8504808063623496051, guid: 0952ef7ad46c3b444b8dbf3733d42972,
+    type: 3}
+  m_PrefabInstance: {fileID: 1795659260}
+  m_PrefabAsset: {fileID: 0}
 --- !u!198 &688920986 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 895283497736637454, guid: 491121ec654b07047b77e3b2f4778e37,
@@ -26073,6 +26080,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772153849}
   m_CullTransparentMesh: 0
+--- !u!1001 &1795659260
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2722933667721828372, guid: 0952ef7ad46c3b444b8dbf3733d42972,
+        type: 3}
+      propertyPath: m_Name
+      value: Comida 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635786673684529141, guid: 0952ef7ad46c3b444b8dbf3733d42972,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635786673684529141, guid: 0952ef7ad46c3b444b8dbf3733d42972,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -40.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635786673684529141, guid: 0952ef7ad46c3b444b8dbf3733d42972,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -88.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635786673684529141, guid: 0952ef7ad46c3b444b8dbf3733d42972,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635786673684529141, guid: 0952ef7ad46c3b444b8dbf3733d42972,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635786673684529141, guid: 0952ef7ad46c3b444b8dbf3733d42972,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635786673684529141, guid: 0952ef7ad46c3b444b8dbf3733d42972,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635786673684529141, guid: 0952ef7ad46c3b444b8dbf3733d42972,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635786673684529141, guid: 0952ef7ad46c3b444b8dbf3733d42972,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635786673684529141, guid: 0952ef7ad46c3b444b8dbf3733d42972,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635786673684529141, guid: 0952ef7ad46c3b444b8dbf3733d42972,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504808063623496051, guid: 0952ef7ad46c3b444b8dbf3733d42972,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0952ef7ad46c3b444b8dbf3733d42972, type: 3}
 --- !u!1 &1808107392
 GameObject:
   m_ObjectHideFlags: 0

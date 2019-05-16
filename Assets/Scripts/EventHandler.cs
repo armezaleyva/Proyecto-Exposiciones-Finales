@@ -35,6 +35,8 @@ public class EventHandler : MonoBehaviour
     [SerializeField]
     ParticleSystem particulasComida;
     [SerializeField]
+    ParticleSystem particulasComida2;
+    [SerializeField]
     ParticleSystem particulasBasura1;
     [SerializeField]
     ParticleSystem particulasBasura2;
@@ -216,7 +218,7 @@ public class EventHandler : MonoBehaviour
             "Robar pertenencias",
             "Diezmar su fuente de alimento",
             "ParticulasMuchoDinero",
-            "ParticulasComida"
+            "ParticulasComida2"
         );
         Evento evento4 = new Evento(
             "Esclavistas",
@@ -274,6 +276,12 @@ public class EventHandler : MonoBehaviour
     {
         particulasComida.Play();
     }
+
+    public void ParticulasComida2()
+    {
+        particulasComida2.Play();
+    }
+
 
     public void ParticulasArcoIris()
     {
