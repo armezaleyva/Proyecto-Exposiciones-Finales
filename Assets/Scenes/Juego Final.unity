@@ -11119,7 +11119,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -20925,17 +20925,17 @@ PrefabInstance:
     - target: {fileID: 8926913880536515558, guid: 0fd918f065810194e8c0bd5ac301f60c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.75
+      value: -6.1
       objectReference: {fileID: 0}
     - target: {fileID: 8926913880536515558, guid: 0fd918f065810194e8c0bd5ac301f60c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.12
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: 8926913880536515558, guid: 0fd918f065810194e8c0bd5ac301f60c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.94
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 8926913880536515558, guid: 0fd918f065810194e8c0bd5ac301f60c,
         type: 3}
@@ -20980,17 +20980,17 @@ PrefabInstance:
     - target: {fileID: 8926913880536515558, guid: 0fd918f065810194e8c0bd5ac301f60c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 8.727507
+      value: 77.105225
       objectReference: {fileID: 0}
     - target: {fileID: 8926913880536515558, guid: 0fd918f065810194e8c0bd5ac301f60c,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 8.727507
+      value: 77.105225
       objectReference: {fileID: 0}
     - target: {fileID: 8926913880536515558, guid: 0fd918f065810194e8c0bd5ac301f60c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 8.727507
+      value: 77.105225
       objectReference: {fileID: 0}
     - target: {fileID: 8926913880536515557, guid: 0fd918f065810194e8c0bd5ac301f60c,
         type: 3}
@@ -21000,7 +21000,7 @@ PrefabInstance:
     - target: {fileID: 8926913880536515557, guid: 0fd918f065810194e8c0bd5ac301f60c,
         type: 3}
       propertyPath: looping
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8926913880536515557, guid: 0fd918f065810194e8c0bd5ac301f60c,
         type: 3}
@@ -25872,7 +25872,7 @@ PrefabInstance:
     - target: {fileID: 1192685157346445070, guid: 381c3f82aa667f64388c4a6fcb9f0f37,
         type: 3}
       propertyPath: looping
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1192685157346445070, guid: 381c3f82aa667f64388c4a6fcb9f0f37,
         type: 3}
