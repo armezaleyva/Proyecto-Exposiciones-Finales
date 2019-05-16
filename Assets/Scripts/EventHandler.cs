@@ -10,6 +10,10 @@ public class EventHandler : MonoBehaviour
     [SerializeField]
     float tiempoDeEspera = 8;
     [SerializeField]
+    float rimPower = 4;
+    [SerializeField]
+    GameObject ciudad;
+    [SerializeField]
     GameObject panel;
     [SerializeField]
     Text tituloEvento;
@@ -27,7 +31,8 @@ public class EventHandler : MonoBehaviour
     private Evento eventoActual;
     private int indexEvento;
 
-    private int numeroAleatorio;
+    private Renderer rendererCiudad;
+    private Material materialCiudad;
 
     Type t;
 
@@ -39,6 +44,9 @@ public class EventHandler : MonoBehaviour
 
         botonDecision1.onClick.AddListener(Decision1);
         botonDecision2.onClick.AddListener(Decision2);
+
+        rendererCiudad = ciudad.GetComponent<Renderer>();
+        materialCiudad = rendererCiudad.material;
 
         Evento evento1 = new Evento(
             "Fé de la Ciudad",
@@ -120,8 +128,8 @@ public class EventHandler : MonoBehaviour
             "Te diste cuenta que tu ciudad necesita ayuda para prosperar, ¡así que buscaste a un mago que hiciera un hechizo para apoyar a tu pueblo!",
             "Hechizo de Estabilidad",
             "Hechizo de Buena Fortuna",
-            "Placeholder",
-            "Placeholder"
+            "RimAmarillo",
+            "RimVerde"
         );
         Evento evento4 = new Evento(
             "Los Viajeros",
@@ -136,7 +144,7 @@ public class EventHandler : MonoBehaviour
             "¡Una enfermedad se está esparciendo por la ciudad, hay que hacer algo!",
             "Buscar una cura",
             "Traer médicos a que los curen",
-            "Placeholder",
+            "RimAzulOscuro",
             "Placeholder"
         );
         Evento evento6 = new Evento(
@@ -163,6 +171,8 @@ public class EventHandler : MonoBehaviour
         listaEventos.Add(evento5);
         listaEventos.Add(evento6);
         listaEventos.Add(evento7);
+
+        RimAzul();
     }
 
     public void EventosMal() 
@@ -172,15 +182,15 @@ public class EventHandler : MonoBehaviour
             "¡Has decidido traerle mal a la ciudad. Hora de causar sufrimiento! ¡Comenzemos con una maldición!",
             "Maldición de Vergüenza",
             "Maldición de Sufrimiento",
-            "Placeholder",
-            "Placeholder"
+            "RimVerdeClaro",
+            "RimMorado"
         );
         Evento evento3 = new Evento(
             "Contrato",
             "Has contratado a un grupo de bandidos para atacar a la ciudad, ¿que es lo que harán?",
             "Robar pertenencias",
             "Diezmar su fuente de alimento",
-            "Placeholder",
+            "ResetRim",
             "Placeholder"
         );
         Evento evento4 = new Evento(
@@ -196,16 +206,16 @@ public class EventHandler : MonoBehaviour
             "¿Todavía no se largan? Bueno, ¡Llenemos la ciudad de enfermedad!",
             "¡Todos sufrirán de lepra!",
             "¡El cólera acabará con ellos!",
-            "Placeholder",
-            "Placeholder"
+            "RimAmarillo",
+            "RimNaranja"
         );
         Evento evento6 = new Evento(
             "Falsas Esperanzas",
             "Tu plan final requiere de que haya personas viviendo en tu ciudad, así que decides curar los males que afectan a tu ciudad.",
             "Revertir todos los males...por ahora...",
             "Revertir todos los males...por ahora...",
-            "Placeholder",
-            "Placeholder"
+            "RimAzul",
+            "RimAzul"
         );
         Evento evento7= new Evento(
             "El mal de los males",
@@ -221,6 +231,84 @@ public class EventHandler : MonoBehaviour
         listaEventos.Add(evento5);
         listaEventos.Add(evento6);
         listaEventos.Add(evento7);
+
+        RimRojo();
+    }
+
+    public void RimAzul()
+    {
+        materialCiudad.SetFloat("_Rim", rimPower);
+        materialCiudad.SetColor("_RimColor", Color.blue);
+    }
+
+    public void RimRojo()
+    {
+        materialCiudad.SetFloat("_Rim", rimPower);
+        materialCiudad.SetColor("_RimColor", Color.red);
+    }
+    
+    public void RimAmarillo()
+    {
+        materialCiudad.SetFloat("_Rim", rimPower);
+        materialCiudad.SetColor("_RimColor", Color.yellow);
+    }
+
+    public void RimVerde()
+    {
+        materialCiudad.SetFloat("_Rim", rimPower);
+        materialCiudad.SetColor("_RimColor", Color.green);
+    }
+
+    public void RimAzulOscuro()
+    {
+        Color azulOscuro;
+        if (ColorUtility.TryParseHtmlString("#003366", out azulOscuro))
+        {
+            materialCiudad.SetFloat("_Rim", rimPower);
+            materialCiudad.SetColor("_RimColor", azulOscuro);
+        }
+    }
+
+    public void RimMorado()
+    {
+        materialCiudad.SetFloat("_Rim", rimPower);
+        materialCiudad.SetColor("_RimColor", Color.magenta);
+    }
+
+    public void RimVerdeOscuro()
+    {
+        Color verdeOscuro;
+        if (ColorUtility.TryParseHtmlString("#006400", out verdeOscuro))
+        {
+            materialCiudad.SetFloat("_Rim", rimPower);
+            materialCiudad.SetColor("_RimColor", verdeOscuro);
+        }
+    }
+
+    public void RimVerdeClaro()
+    {
+        Color verdeClaro;
+        if (ColorUtility.TryParseHtmlString("#00FF00", out verdeClaro))
+        {
+            materialCiudad.SetFloat("_Rim", rimPower);
+            materialCiudad.SetColor("_RimColor", verdeClaro);
+        }
+    }
+
+    public void RimNaranja()
+    {
+        Color naranja;
+        if (ColorUtility.TryParseHtmlString("#ffa500", out naranja))
+        {
+            materialCiudad.SetFloat("_Rim", rimPower);
+            materialCiudad.SetColor("_RimColor", naranja);
+        }
+    }
+
+    public void ResetRim()
+    {
+        materialCiudad.SetFloat("_Rim", 10);
+        materialCiudad.SetColor("_RimColor", Color.black);
     }
 
     public void Placeholder()
