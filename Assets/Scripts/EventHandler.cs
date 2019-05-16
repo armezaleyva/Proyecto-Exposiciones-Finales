@@ -26,6 +26,16 @@ public class EventHandler : MonoBehaviour
 
     [SerializeField]
     ParticleSystem particulasDinero;
+    [SerializeField]
+    ParticleSystem particulasFuego;
+    [SerializeField]
+    ParticleSystem particulasArcoIris;
+    [SerializeField]
+    ParticleSystem particulasComida;
+    [SerializeField]
+    ParticleSystem particulasBasura1;
+    [SerializeField]
+    ParticleSystem particulasBasura2;
 
     private Text txtBotonDecision1;
     private Text txtBotonDecision2;
@@ -123,7 +133,7 @@ public class EventHandler : MonoBehaviour
             "Has elegido ser una ciudad de bien, ¡ahora debes encaminar a tu ciudad a la prosperidad! ¡Debes decidir a que se dedicara tu ciudad!",
             "Producción de alimento y comercio",
             "Producción de objetos y comercio",
-            "Placeholder",
+            "ParticulasComida",
             "ParticulasDinero"
         );
         Evento evento3 = new Evento(
@@ -140,7 +150,7 @@ public class EventHandler : MonoBehaviour
             "Ofrecerles trabajo para que se queden",
             "Ofrecerles comida y estancia temporal",
             "Placeholder",
-            "Placeholder"
+            "ParticulasComida"
         );
         Evento evento5 = new Evento(
             "La Enfermedad",
@@ -155,8 +165,8 @@ public class EventHandler : MonoBehaviour
             "Un grupo de bandidos fue detenido en tu ciudad, es hora de la justicia.",
             "Servicio comunitario",
             "Exiliarlos de la ciudad",
-            "Placeholder",
-            "Placeholder"
+            "ParticulasBasura",
+            "ParticulasArcoIris"
         );
         Evento evento7 = new Evento(
             "El Legado",
@@ -193,8 +203,8 @@ public class EventHandler : MonoBehaviour
             "Has contratado a un grupo de bandidos para atacar a la ciudad, ¿que es lo que harán?",
             "Robar pertenencias",
             "Diezmar su fuente de alimento",
-            "ResetRim",
-            "Placeholder"
+            "ParticulasDinero",
+            "ParticulasComida"
         );
         Evento evento4 = new Evento(
             "Esclavistas",
@@ -226,7 +236,7 @@ public class EventHandler : MonoBehaviour
             "¡Lluvia de Sangre!",
             "¡Quemar la ciudad!",
             "Placeholder",
-            "Placeholder"
+            "ParticulasFuego"
         );
         listaEventos.Add(evento2);
         listaEventos.Add(evento3);
@@ -241,6 +251,27 @@ public class EventHandler : MonoBehaviour
     public void ParticulasDinero()
     {
         particulasDinero.Play();
+    }
+
+    public void ParticulasComida()
+    {
+        particulasComida.Play();
+    }
+
+    public void ParticulasArcoIris()
+    {
+        particulasArcoIris.Play();
+    }
+
+    public void ParticulasBasura()
+    {
+        particulasBasura1.Play();
+        particulasBasura2.Play();
+    }
+    
+    public void ParticulasFuego()
+    {
+        particulasFuego.Play();
     }
 
     public void RimAzul()
