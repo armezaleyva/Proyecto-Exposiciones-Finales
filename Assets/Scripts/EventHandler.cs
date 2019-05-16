@@ -42,6 +42,8 @@ public class EventHandler : MonoBehaviour
     ParticleSystem particulasNiño;
     [SerializeField]
     ParticleSystem particulasNiña;
+    [SerializeField]
+    ParticleSystem particulasBilletes;
     
 
     private Text txtBotonDecision1;
@@ -213,7 +215,7 @@ public class EventHandler : MonoBehaviour
             "Has contratado a un grupo de bandidos para atacar a la ciudad, ¿que es lo que harán?",
             "Robar pertenencias",
             "Diezmar su fuente de alimento",
-            "ParticulasDinero",
+            "ParticulasMuchoDinero",
             "ParticulasComida"
         );
         Evento evento4 = new Evento(
@@ -261,6 +263,11 @@ public class EventHandler : MonoBehaviour
     public void ParticulasDinero()
     {
         particulasDinero.Play();
+    }
+
+    public void ParticulasMuchoDinero()
+    {
+        particulasBilletes.Play();
     }
 
     public void ParticulasComida()
