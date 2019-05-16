@@ -55,6 +55,8 @@ public class EventHandler : MonoBehaviour
     [SerializeField]
     ParticleSystem particulasReyBebe;
     [SerializeField]
+    ParticleSystem particulasReyPerro;
+    [SerializeField]
     ParticleSystem particulasLluviaSangrienta;
     
 
@@ -198,7 +200,7 @@ public class EventHandler : MonoBehaviour
             "Alguien de tu familia",
             "Que decida la gente",
             "ParticulasReyBebe",
-            "Placeholder"
+            "ParticulasReyPerro"
         );
         
 
@@ -340,6 +342,11 @@ public class EventHandler : MonoBehaviour
         particulasReyBebe.Play();
     }
 
+    public void ParticulasReyPerro()
+    {
+        particulasReyPerro.Play();
+    }
+
     public void ParticulasLluviaSangrienta()
     {
         particulasLluviaSangrienta.Play();
@@ -426,10 +433,5 @@ public class EventHandler : MonoBehaviour
     {
         materialCiudad.SetFloat("_Rim", 10);
         materialCiudad.SetColor("_RimColor", Color.black);
-    }
-
-    public void Placeholder()
-    {
-        print("I am a placeholder");
     }
 }
