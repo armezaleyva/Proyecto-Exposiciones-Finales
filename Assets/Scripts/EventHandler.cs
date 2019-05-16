@@ -48,6 +48,14 @@ public class EventHandler : MonoBehaviour
     ParticleSystem particulasBilletes;
     [SerializeField]
     ParticleSystem particulasMaletines;
+    [SerializeField]
+    ParticleSystem particulasDoctores;
+    [SerializeField]
+    ParticleSystem particulasCalaveras;
+    [SerializeField]
+    ParticleSystem particulasReyBebe;
+    [SerializeField]
+    ParticleSystem particulasLluviaSangrienta;
     
 
     private Text txtBotonDecision1;
@@ -174,7 +182,7 @@ public class EventHandler : MonoBehaviour
             "Buscar una cura",
             "Traer médicos a que los curen",
             "RimAzulOscuro",
-            "Placeholder"
+            "ParticulasDoctores"
         );
         Evento evento6 = new Evento(
             "Justicia",
@@ -189,7 +197,7 @@ public class EventHandler : MonoBehaviour
             "Con el paso del tiempo ya no podrás seguir al mando de la ciudad y debe haber un sucesor. ¡Elige con sabiduría!",
             "Alguien de tu familia",
             "Que decida la gente",
-            "Placeholder",
+            "ParticulasReyBebe",
             "Placeholder"
         );
         
@@ -251,7 +259,7 @@ public class EventHandler : MonoBehaviour
             "Tu plan ha funcionado. ¡Ahora destruye tu ciudad y termina con la vida de aquellos que la habitan!",
             "¡Lluvia de Sangre!",
             "¡Quemar la ciudad!",
-            "Placeholder",
+            "ParticulasLluviaSangrienta",
             "ParticulasFuego"
         );
         listaEventos.Add(evento2);
@@ -299,6 +307,7 @@ public class EventHandler : MonoBehaviour
     public void ParticulasFuego()
     {
         particulasFuego.Play();
+        ParticulasCalaveras();
     }
 
     public void ParticulasNiño()
@@ -314,6 +323,27 @@ public class EventHandler : MonoBehaviour
     public void ParticulasMaletines()
     {
         particulasMaletines.Play();
+    }
+
+    public void ParticulasDoctores()
+    {
+        particulasDoctores.Play();
+    }
+
+    public void ParticulasCalaveras()
+    {
+        particulasCalaveras.Play();
+    }
+
+    public void ParticulasReyBebe()
+    {
+        particulasReyBebe.Play();
+    }
+
+    public void ParticulasLluviaSangrienta()
+    {
+        particulasLluviaSangrienta.Play();
+        ParticulasCalaveras();
     }
 
     public void RimAzul()
