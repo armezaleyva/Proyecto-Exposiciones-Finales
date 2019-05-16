@@ -10,7 +10,7 @@
             "typeInfo": {
                 "fullName": "UnityEditor.ShaderGraph.ColorShaderProperty"
             },
-            "JSONnodeData": "{\n    \"m_Name\": \"Rim Color\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"38b8e0f9-5a5b-451c-bcab-ea3b64c759c5\"\n    },\n    \"m_DefaultReferenceName\": \"Color_BED923D9\",\n    \"m_OverrideReferenceName\": \"_RimColor\",\n    \"m_Value\": {\n        \"r\": 1.0,\n        \"g\": 0.49528300762176516,\n        \"b\": 0.49528300762176516,\n        \"a\": 0.0\n    },\n    \"m_ColorMode\": 0,\n    \"m_Hidden\": false\n}"
+            "JSONnodeData": "{\n    \"m_Name\": \"Rim Color\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"38b8e0f9-5a5b-451c-bcab-ea3b64c759c5\"\n    },\n    \"m_DefaultReferenceName\": \"Color_BED923D9\",\n    \"m_OverrideReferenceName\": \"_RimColor\",\n    \"m_Value\": {\n        \"r\": 1.0,\n        \"g\": 1.0,\n        \"b\": 1.0,\n        \"a\": 0.0\n    },\n    \"m_ColorMode\": 0,\n    \"m_Hidden\": false\n}"
         },
         {
             "typeInfo": {
