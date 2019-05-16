@@ -127,14 +127,42 @@ public class EventHandler : MonoBehaviour
             "Los Viajeros",
             "Tu ciudad está prosperando, por lo que muchos viajeros están llegado a la ciudad…",
             "Ofrecerles trabajo para que se queden",
-            "Ofrecerles comida y estancia para que pasen la noche",
+            "Ofrecerles comida y estancia temporal",
             "Placeholder",
             "Placeholder"
         );
+        Evento evento5 = new Evento(
+            "La Enfermedad",
+            "¡Una enfermedad se está esparciendo por la ciudad, hay que hacer algo!",
+            "Buscar una cura",
+            "Traer médicos a que los curen",
+            "Placeholder",
+            "Placeholder"
+        );
+        Evento evento6 = new Evento(
+            "Justicia",
+            "Un grupo de bandidos fue detenido en tu ciudad, es hora de la justicia.",
+            "Servicio comunitario",
+            "Exiliarlos de la ciudad",
+            "Placeholder",
+            "Placeholder"
+        );
+        Evento evento7 = new Evento(
+            "El Legado",
+            "Con el paso del tiempo ya no podrás seguir al mando de la ciudad y debe haber un sucesor. ¡Elige con sabiduría!",
+            "Alguien de tu familia",
+            "Que decida la gente",
+            "Placeholder",
+            "Placeholder"
+        );
+        
 
         listaEventos.Add(evento2);
         listaEventos.Add(evento3);
         listaEventos.Add(evento4);
+        listaEventos.Add(evento5);
+        listaEventos.Add(evento6);
+        listaEventos.Add(evento7);
     }
 
     public void EventosMal() 
