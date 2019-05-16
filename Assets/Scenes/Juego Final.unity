@@ -10129,7 +10129,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "Decisi\xF3n 1"
 --- !u!222 &205518719
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10915,9 +10915,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'titulo xd
-
-'
+  m_Text: "T\xEDtulo de evento"
 --- !u!222 &611035382
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -31305,6 +31303,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Comida 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8504808063623496051, guid: 0952ef7ad46c3b444b8dbf3733d42972,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1635786673684529141, guid: 0952ef7ad46c3b444b8dbf3733d42972,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31360,11 +31363,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8504808063623496051, guid: 0952ef7ad46c3b444b8dbf3733d42972,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0952ef7ad46c3b444b8dbf3733d42972, type: 3}
 --- !u!1 &1808107392
@@ -31384,7 +31382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1808107393
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31635,7 +31633,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: "Decisi\xF3n 2"
 --- !u!222 &1857356597
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37039,7 +37037,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: xdxdxd
+  m_Text: "Descripci\xF3n de evento"
 --- !u!222 &2120926334
 CanvasRenderer:
   m_ObjectHideFlags: 0
