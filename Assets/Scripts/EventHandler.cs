@@ -10,6 +10,8 @@ public class EventHandler : MonoBehaviour
     [SerializeField]
     float tiempoDeEspera = 8;
     [SerializeField]
+    Slider sliderRimPower;
+    [SerializeField]
     float rimPower = 4;
     [SerializeField]
     GameObject ciudad;
@@ -57,6 +59,9 @@ public class EventHandler : MonoBehaviour
 
         botonDecision1.onClick.AddListener(Decision1);
         botonDecision2.onClick.AddListener(Decision2);
+
+        sliderRimPower.value = rimPower;
+        sliderRimPower.onValueChanged.AddListener(ActualizarRimPower);
 
         rendererCiudad = ciudad.GetComponent<Renderer>();
         materialCiudad = rendererCiudad.material;
@@ -303,7 +308,7 @@ public class EventHandler : MonoBehaviour
         Color azulOscuro;
         if (ColorUtility.TryParseHtmlString("#003366", out azulOscuro))
         {
-            materialCiudad.SetFloat("_Rim", rimPower);
+            materialCiudad.SetFloat("_Rim", rimPower / 3);
             materialCiudad.SetColor("_RimColor", azulOscuro);
         }
     }
@@ -342,6 +347,12 @@ public class EventHandler : MonoBehaviour
             materialCiudad.SetFloat("_Rim", rimPower);
             materialCiudad.SetColor("_RimColor", naranja);
         }
+    }
+
+    void ActualizarRimPower(float value)
+    {
+        rimPower = value;
+        materialCiudad.SetFloat("_Rim", rimPower);
     }
 
     public void ResetRim()
