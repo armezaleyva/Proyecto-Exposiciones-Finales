@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -835,13 +835,13 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929711892}
   serializedVersion: 6
-  lengthInSec: 5
+  lengthInSec: 8
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -5511,7 +5511,7 @@ GameObject:
   - component: {fileID: 1254984142}
   - component: {fileID: 1254984141}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Comida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5587,7 +5587,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254984140}
   serializedVersion: 6
-  lengthInSec: 5
+  lengthInSec: 8
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -10571,7 +10571,7 @@ GameObject:
   - component: {fileID: 1899166532}
   - component: {fileID: 1899166531}
   m_Layer: 0
-  m_Name: Comida
+  m_Name: Pescado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10647,13 +10647,13 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899166530}
   serializedVersion: 6
-  lengthInSec: 5
+  lengthInSec: 8
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -15393,6 +15393,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 8.727507
       objectReference: {fileID: 0}
+    - target: {fileID: 8926913880536515557, guid: 0fd918f065810194e8c0bd5ac301f60c,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926913880536515557, guid: 0fd918f065810194e8c0bd5ac301f60c,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fd918f065810194e8c0bd5ac301f60c, type: 3}
 --- !u!1 &2072033809
@@ -15709,7 +15719,7 @@ PrefabInstance:
     - target: {fileID: 895283497736637454, guid: 491121ec654b07047b77e3b2f4778e37,
         type: 3}
       propertyPath: looping
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 895283497736637454, guid: 491121ec654b07047b77e3b2f4778e37,
         type: 3}
@@ -15719,7 +15729,7 @@ PrefabInstance:
     - target: {fileID: 895283497736637454, guid: 491121ec654b07047b77e3b2f4778e37,
         type: 3}
       propertyPath: lengthInSec
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 895283497736637454, guid: 491121ec654b07047b77e3b2f4778e37,
         type: 3}
@@ -16193,7 +16203,7 @@ PrefabInstance:
     - target: {fileID: 895283497736637454, guid: 491121ec654b07047b77e3b2f4778e37,
         type: 3}
       propertyPath: looping
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 895283497736637454, guid: 491121ec654b07047b77e3b2f4778e37,
         type: 3}
@@ -16203,7 +16213,7 @@ PrefabInstance:
     - target: {fileID: 895283497736637454, guid: 491121ec654b07047b77e3b2f4778e37,
         type: 3}
       propertyPath: lengthInSec
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 895283497736637454, guid: 491121ec654b07047b77e3b2f4778e37,
         type: 3}
